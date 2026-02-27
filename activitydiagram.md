@@ -1,7 +1,7 @@
 ---
 id: project-activity-diagram
 ---
-
+'''mermaid
 
 flowchart TD
     Start([Start])
@@ -42,3 +42,5 @@ flowchart TD
     FlagManual --> SaveOutput
     SaveOutput --> BatchLoop
     BatchLoop --> End
+
+    '''
