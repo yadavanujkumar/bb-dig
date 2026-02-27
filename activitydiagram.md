@@ -1,8 +1,8 @@
-'''mermaid
 ---
 id: project-activity-diagram
 ---
 
+```mermaid
 flowchart TD
     Start([Start])
     UserInput([User Input: Provide PDF or payload])
@@ -42,5 +42,4 @@ flowchart TD
     FlagManual --> SaveOutput
     SaveOutput --> BatchLoop
     BatchLoop --> End
-
-    '''
+```
