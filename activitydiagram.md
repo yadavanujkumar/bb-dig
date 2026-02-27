@@ -1,7 +1,7 @@
+'''mermaid
 ---
 id: project-activity-diagram
 ---
-'''mermaid
 
 flowchart TD
     Start([Start])
