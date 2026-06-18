@@ -10,12 +10,10 @@ flowchart TD
     ValidatePayload{Validate Payload}
     BatchLoop([For each document])
     ResolveSource([Resolve PDF Source: Local/S3])
-    LoadPDF([Load PDF Bytes])
-    ExtractText([Extract Text from PDF])
+    LoadPDF([Load PDF Bytes and Extract Text])
     ResolveConfig([Resolve Config, Prompt, LLM])
     BuildPrompt([Build Prompt & Messages])
-    ModelQuery([Invoke LLM Model])
-    ParseResponse([Parse LLM Response])
+    ModelQuery([Invoke LLM Mode and Parse LLm Responsel])
     ValidateExtract{Validate Extraction}
     RetryExtract([Retry Extraction if Invalid])
     FlagManual([Flag for Manual Review])
@@ -29,12 +27,10 @@ flowchart TD
     ValidatePayload -->|Invalid| End
     BatchLoop --> ResolveSource
     ResolveSource --> LoadPDF
-    LoadPDF --> ExtractText
-    ExtractText --> ResolveConfig
+    LoadPDF --> ResolveConfig
     ResolveConfig --> BuildPrompt
     BuildPrompt --> ModelQuery
-    ModelQuery --> ParseResponse
-    ParseResponse --> ValidateExtract
+    ModelQuery --> ValidateExtract
     ValidateExtract -->|Valid| SaveOutput
     ValidateExtract -->|Invalid| RetryExtract
     RetryExtract --> ValidateExtract
